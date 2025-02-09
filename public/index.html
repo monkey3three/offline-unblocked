@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap" rel="stylesheet">
+<link rel="manifest" href="/manifest.json">
+<style>
+    .lib {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(30deg, #1c232e, #222a37, #1c232e);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  align-content: flex-start;
+}
+
+.textline {
+  position: relative;
+  font-family: 'Julius Sans One', sans-serif;
+  color: white;
+  letter-spacing: 2px;
+  padding: 0 15px;
+  font-size: 16px;
+  margin-top: 20px;
+  overflow: hidden;
+  width: calc(100% - 45px);
+}
+
+.textline:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  top: 8px;
+  margin-left: 10px;
+  width: 100%;
+  background: linear-gradient(to right, #404957, #1c2026);
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #2e3540;
+  margin: 15px;
+}
+
+.card {
+  position: relative;
+  margin: 15px;
+  width: 220px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-top: 1px solid #444;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.75), 0 0 3px rgba(123, 123, 123, 0.75);
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+  transition-timing-function: ease-out;
+}
+
+.card-gradient {
+  position: absolute;
+  top: -35%;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(30deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, rgb(255, 255, 255) 55%);
+  transition: top 0.4s, opacity 0.4s;
+  opacity: 0.1;
+}
+
+.card:hover .card-gradient {
+  top: 0;
+  opacity: 0.15;
+}
+
+.card:hover {
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.75), 0 0 3px rgba(123, 123, 123, 0.75);
+  -webkit-transform: perspective(400px) rotateX(5deg);
+}
+
+/* New styles for game name */
+.game-name {
+  position: absolute;
+  bottom: -50px; /* Start hidden below the card */
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  transition: bottom 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0; /* Start fully transparent */
+}
+
+.card:hover .game-name {
+  bottom: 0; /* Move up to show the text */
+  opacity: 1; /* Make it fully visible */
+}
+</style>
+<div class="lib">
+  <div class="textline">MISC GAMES <span style="color: #aaa;">(6)</span>
+  </div>
+  <a href="#" onclick="playGame('/flash/big_red_button.swf')">
+    <div class="card" style="background-image: url(/images/bigred.jpg)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Big Red Button</div>
+    </div>
+  </a>
+  <a href="#" onclick="playGame('/flash/alienhominid.swf')">
+    <div class="card" style="background-image: url(/images/alien.jpg)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Alien Hominid</div>
+    </div>
+  </a>
+  <a href="#" onclick="playGame('/flash/unlocked.swf')">
+    <div class="card" style="background-image: url(/images/unlocked.jpg)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Achievement Unlocked 2</div>
+    </div>
+  </a>
+  <a href="#" onclick="playGame('/flash/bloons-tower-defense-5.swf')">
+    <div class="card" style="background-image: url(/images/btd5.jpg)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Bloons Tower Defense 5</div>
+    </div>
+  </a>
+  <a href="#" onclick="playGame('/flash/cat-ninja.swf')">
+    <div class="card" style="background-image: url(/images/cat-ninja.png)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Cat Ninja</div>
+    </div>
+  </a>
+  <a href="#" onclick="playGame('/games/clicker-heroes/index.html')">
+    <div class="card" style="background-image: url(/images/clicker.jpg)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Clicker Heroes</div>
+    </div>
+  </a>
+<a href="#" onclick="playGame('/games/2020game/index.html')">
+    <div class="card" style="background-image: url(/images/placeholder.png)">
+      <div class="card-gradient"></div>
+      <div class="game-name">2020 Game</div>
+    </div>
+  </a>
+  <div class="textline">SHOOTERS <span style="color: #aaa;">(2)</span>
+  </div>
+  <a href="#" onclick="playGame('/games/00000protektor/index.html')">
+    <div class="card" style="background-image: url(/images/placeholder.png)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Protektor</div>
+    </div>
+  </a>
+  <a href="#" onclick="playGame('/games/time-shooter/index.html')">
+    <div class="card" style="background-image: url(/images/ts.webp)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Time Shooter</div>
+    </div>
+  </a>
+  <a href="#" onclick="playGame('/games/time-shooter-2/index.html')">
+    <div class="card" style="background-image: url(/images/ts.jpeg)">
+      <div class="card-gradient"></div>
+      <div class="game-name">Time Shooter 2</div>
+    </div>
+  </a>
+</div>
+
+<script src="/ruffle/ruffle.js"></script>
+<script>
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch((error) => {
+        console.log('Service Worker registration failed:', error);
+      });
+  });
+}
+
+
+  function playGame(gameFile) {
+    // Create a container for the game player
+    const playerContainer = document.createElement('div');
+    playerContainer.style.position = 'fixed';
+    playerContainer.style.top = '0';
+    playerContainer.style.left = '0';
+    playerContainer.style.width = '100%';
+    playerContainer.style.height = '100%';
+    playerContainer.style.backgroundColor = '#000';
+    playerContainer.style.display = 'flex';
+    playerContainer.style.justifyContent = 'center';
+    playerContainer.style.alignItems = 'center';
+    playerContainer.style.zIndex = '9999';
+
+    // Add Ruffle player
+    const embed = document.createElement('embed');
+    embed.src = gameFile;
+    embed.width = '800';
+    embed.height = '600';
+    embed.style.border = '2px solid #66C0F4';
+
+    playerContainer.appendChild(embed);
+
+    // Add close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = '#66C0F4';
+    closeButton.style.color = '#000';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '4px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.onclick = () => document.body.removeChild(playerContainer);
+
+    playerContainer.appendChild(closeButton);
+    document.body.appendChild(playerContainer);
+
+    const ruffle = window.RufflePlayer.newest();
+    ruffle.attachEmbed(embed);
+  }
+</script>
+
+
+
