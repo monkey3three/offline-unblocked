@@ -12,3 +12,4 @@ Simply just head to the releases and download *OfflineUnblocked-win32-x64.zip*
 5. npm install electron
 6. npm install express
 7. npm install -g electron-packager (Optional! Only if you want to package your edited version.)
+8. npm start (To start the app)
